@@ -2,16 +2,17 @@
     "name": "tcvn-bot",
     "version": "1.0.0",
     "description": "",
-    "main": "bot.ts",
+    "main": "app.js",
+    "type": "module",
     "scripts": {
-        "dev": "nodemon bot.ts"
+        "start": "nodemon app.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@types/node-schedule": "^2.1.4",
         "dotenv": "^16.3.1",
+        "express": "^4.18.2",
         "node-schedule": "^2.1.1",
         "telegraf": "^4.15.2"
     },
