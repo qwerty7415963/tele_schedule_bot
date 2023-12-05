@@ -1,14 +1,22 @@
 import { Telegraf } from 'telegraf'
 import 'dotenv/config'
 import schedule from 'node-schedule'
+import express from 'express'
+const PORT = process.env.PORT || 3000
 
-let blockChatJob: any
-let unblockChatJob: any
+const app = express()
+
+let blockChatJob
+let unblockChatJob
 
 const bot = new Telegraf(process.env.BOT_TOKEN ?? '')
 
 // Admin user IDs
 const ADMINS = [5544828606, 6747207838]
+
+app.get('*', function (req, res) {
+    res.send('Live')
+})
 
 bot.command('check', (ctx) => ctx.reply('is alive'))
 
@@ -51,6 +59,6 @@ bot.command('scheduleMute', (ctx) => {
 
 bot.launch()
 
-// Enable graceful stop
-process.once('SIGINT', () => bot.stop('SIGINT'))
-process.once('SIGTERM', () => bot.stop('SIGTERM'))
+app.listen(PORT, () => {
+    console.log('Server listenning on PORT', PORT)
+})
