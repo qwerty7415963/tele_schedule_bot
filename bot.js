@@ -22,7 +22,7 @@ bot.command('check', (ctx) => ctx.reply('is alive'))
 
 bot.command('scheduleMute', (ctx) => {
     // Check if user is admin
-    if (ADMINS !== ctx.from.id) {
+    if (ADMINS !== ctx.from.id.toString()) {
         return ctx.reply('Only admins can use this command')
     }
 
