@@ -36,14 +36,14 @@ bot.command('scheduleMute', (ctx) => {
     }
 
     // Schedule chat block everyday at 12 PM
-    blockChatJob = schedule.scheduleJob('0 0 0 * * ?', () => {
+    blockChatJob = schedule.scheduleJob('0 17 * * 1-7', () => {
         ctx.setChatPermissions({
             can_send_messages: false,
         })
     })
 
     // Schedule chat unblock everyday at 6 AM
-    unblockChatJob = schedule.scheduleJob('0 0 6 * * ?', () => {
+    unblockChatJob = schedule.scheduleJob('0 23 * * 1-7', () => {
         ctx.setChatPermissions(
             {
                 can_send_messages: true,
@@ -54,6 +54,12 @@ bot.command('scheduleMute', (ctx) => {
                 can_send_documents: false,
                 can_send_video_notes: false,
                 can_send_video_notes: false,
+                can_send_voice_notes: false,
+                can_send_polls: false,
+                can_add_web_page_previews: false,
+                can_manage_topics: false,
+                can_change_info: false,
+                can_pin_messages: false,
             },
             {
                 use_independent_chat_permissions: true,
