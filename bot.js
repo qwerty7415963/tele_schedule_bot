@@ -36,7 +36,7 @@ bot.command('scheduleMute', (ctx) => {
     }
 
     // Schedule chat block everyday at 12 PM
-    blockChatJob = schedule.scheduleJob('0 0 * * 1-7', () => {
+    blockChatJob = schedule.scheduleJob('0 0 * * *', () => {
         ctx.reply('lock')
         ctx.setChatPermissions({
             can_send_messages: false,
@@ -44,7 +44,7 @@ bot.command('scheduleMute', (ctx) => {
     })
 
     // Schedule chat unblock everyday at 6 AM
-    unblockChatJob = schedule.scheduleJob('0 6 * * 1-7', () => {
+    unblockChatJob = schedule.scheduleJob('0 6 * * *', () => {
         ctx.reply('unlock')
         ctx.setChatPermissions(
             {
