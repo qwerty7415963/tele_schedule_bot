@@ -13,7 +13,10 @@ const scriptLock = `12h rồi tạm biệt chốn hoang tưởng của chúng ta
 ❌ Tham gia group Premium không mất phí
 ❌ Không yêu cầu chuyển tiền xác minh
 ❌ Không buôn bán USDT
-❌ Không đi pool, ICO, IDO,…`
+❌ Không đi pool, ICO, IDO,…
+
+💎 Tham gia nhóm Premium <b>TradeCoinVN</b> với các <b>lợi ích tối đa</b> ae xem chi tiết <a href="https://t.me/margintradingTCVN/12736">TẠI ĐÂY</a>
+`
 
 const scriptUnlock = `Chào ngày mới các dân chơi lướt sóng và hodl-gang! We're back 🤟😙
 
@@ -31,5 +34,7 @@ Ae đã đánh răng, uống cà phê và check portfolio chưa ⛅️☕️
 ❌ Không yêu cầu chuyển tiền xác minh
 ❌ Không buôn bán USDT
 ❌ Không đi pool, ICO, IDO,…
+
+💎 Tham gia nhóm Premium <b>TradeCoinVN</b> với các <b>lợi ích tối đa</b> ae xem chi tiết <a href="https://t.me/margintradingTCVN/12736">TẠI ĐÂY</a>
 `
 export { scriptLock, scriptUnlock }

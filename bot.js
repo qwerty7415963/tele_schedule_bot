@@ -19,7 +19,19 @@ app.get('*', function (req, res) {
     res.send('Live')
 })
 
-bot.command('check', (ctx) => ctx.reply('live'))
+bot.command('version', (ctx) => ctx.reply('1'))
+
+// bot.command('check', (ctx) =>
+//     ctx
+//         .reply(scriptLock, {
+//             parse_mode: 'HTML',
+//         })
+//         .then(() => {
+//             ctx.setChatPermissions({
+//                 can_send_messages: false,
+//             })
+//         })
+// )
 
 bot.command('scheduleMute', (ctx) => {
     // Check if user is admin
@@ -38,7 +50,9 @@ bot.command('scheduleMute', (ctx) => {
 
     // Schedule chat block everyday at 12 PM
     blockChatJob = schedule.scheduleJob('0 0 * * *', () => {
-        ctx.reply(scriptLock, { parse_mode: 'HTML' }).then(() => {
+        ctx.reply(scriptLock, {
+            parse_mode: 'HTML',
+        }).then(() => {
             ctx.setChatPermissions({
                 can_send_messages: false,
             })
@@ -47,7 +61,9 @@ bot.command('scheduleMute', (ctx) => {
 
     // Schedule chat unblock everyday at 6 AM
     unblockChatJob = schedule.scheduleJob('0 6 * * *', () => {
-        ctx.reply(scriptUnlock, { parse_mode: 'HTML' }).then(() => {
+        ctx.reply(scriptUnlock, {
+            parse_mode: 'HTML',
+        }).then(() => {
             ctx.setChatPermissions(
                 {
                     can_send_messages: true,
